@@ -1,5 +1,3 @@
-import React, { useState, useEffect } from 'react'
-
 export default function Weather({ data }) {
 
   const formattedName = `${data.name}, ${data.sys.country}`;

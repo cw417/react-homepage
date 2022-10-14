@@ -37,7 +37,7 @@ function App() {
     fetch(weatherApiUrl)
     .then((res) => res.json())
     .then((data) => setWeatherData(data));
-  }, [])
+  }, [weatherApiUrl])
 
   // functions
 
