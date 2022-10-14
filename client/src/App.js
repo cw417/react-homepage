@@ -15,7 +15,7 @@ function initialStateWeather() {
 }
 
 function initialStateNews() {
-  return { articles: ['one', 'two', 'three'] }
+  return { articles: [ { title: '', author: '', url: '', source: {name: ''} } ] }
 }
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
   const [ weatherData, setWeatherData ] = useState(initialStateWeather());
   const [ todos, setTodos ] = useState([]);
   const [ newsData, setNewsData ] = useState(initialStateNews())
-  
+
   // local storage setup for 'userInfo'
 
   const LOCAL_STORAGE_KEY_INFO = 'homepageApp.info'
