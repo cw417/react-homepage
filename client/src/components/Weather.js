@@ -1,14 +1,38 @@
 import ButtonGroup from "./ButtonGroup";
+import React, { useEffect } from "react";
 
-export default function Weather({ data }) {
+export default function Weather({ data, tempType, updateTempType }) {
+
+  
+  const displayC = (tempType === 'C') ? 'block' : 'none';
+  const displayF = (tempType === 'F') ? 'block' : 'none';
+  
 
   const formattedName = `${data.name}, ${data.sys.country}`;
   const icon = `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
+
   const tempC = Math.round(convertTempKC(data.main.temp)) + "\u2103;";
   const feelsLikeC = Math.round(convertTempKC(data.main.feels_like)) + "\u2103;";
   const tempMinC = Math.round(convertTempKC(data.main.temp_min)) + "\u2103;";
   const tempMaxC = Math.round(convertTempKC(data.main.temp_max)) + "\u2103;";
+
+  const tempF = Math.round(convertTempKF(data.main.temp)) + "\u2103;";
+  const feelsLikeF = Math.round(convertTempKF(data.main.feels_like)) + "\u2103;";
+  const tempMinF = Math.round(convertTempKF(data.main.temp_min)) + "\u2103;";
   const tempMaxF = Math.round(convertTempKF(data.main.temp_max)) + "\u2103;";
+
+
+  //useEffect(() => {
+  //  console.log(tempType)
+  //  if (tempType == 'F') {
+  //    displayF = 'block';
+  //    displayC = 'none'
+  //  }
+  //  else {
+  //    displayC = 'block';
+  //    displayF = 'none'
+  //  }
+  //}, [tempType])
 
   function capitalize(s) {
     /**
@@ -38,14 +62,24 @@ export default function Weather({ data }) {
   
   return (
     <div className="weather">
-      <ButtonGroup />
+      <ButtonGroup updateTempType={updateTempType} />
       <div className="weather--location">{formattedName}</div>
       <div>{capitalize(data.weather[0].description)}</div>
       <img src={icon} alt="Weather icon" />
-      <div>Temp: {tempC}</div>
-      <div>Feel: {feelsLikeC}</div>
-      <div>Min: {tempMinC}</div>
-      <div>Max: {tempMaxC}</div>
+      <div style={{display: displayC}}
+      >
+        <div>Temp: {tempC}</div>
+        <div>Feel: {feelsLikeC}</div>
+        <div>Min: {tempMinC}</div>
+        <div>Max: {tempMaxC}</div>
+      </div>
+      <div style={{display: displayF}}
+      >
+        <div>Temp: {tempF}</div>
+        <div>Feel: {feelsLikeF}</div>
+        <div>Min: {tempMinF}</div>
+        <div>Max: {tempMaxF}</div>
+      </div>
     </div>
   )
 }

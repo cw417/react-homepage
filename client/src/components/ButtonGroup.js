@@ -3,7 +3,7 @@ import ButtonToggle from './ButtonToggle';
 
 const types = ["C", "F"];
 
-export default function ButtonGroup() {
+export default function ButtonGroup({ updateTempType }) {
   /* Button group for toggling temperature display between C and F */
   
   const [ active, setActive ] = useState(types[0]);
@@ -25,6 +25,7 @@ export default function ButtonGroup() {
             type={type}
             active={active}
             toggleActive={toggleActive}
+            updateTempType={updateTempType}
           />
         )
       })}

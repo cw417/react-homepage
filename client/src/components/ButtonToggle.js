@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function ButtonToggle({ type, active, toggleActive }) {
+export default function ButtonToggle({ type, active, toggleActive, updateTempType }) {
 
   const opacity = (active === type) ? 1 : 0.6;
 
@@ -9,6 +9,7 @@ export default function ButtonToggle({ type, active, toggleActive }) {
      * Toggle active button to current type.
      */
     toggleActive(type);
+    updateTempType(type);
   }
 
   return (

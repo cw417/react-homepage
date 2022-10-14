@@ -14,7 +14,7 @@ function initialState() {
 
 function App() {
 
-  const [ userInfo, setUserInfo ] = useState({ name: "" });
+  const [ userInfo, setUserInfo ] = useState({ name: "", tempType: "C" });
   const [ weatherData, setWeatherData ] = useState(initialState());
   
   // local storage setup
@@ -54,11 +54,25 @@ function App() {
     setUserInfo(newUserInfo);
   }
 
+  function updateTempType(type) {
+    /**
+     * Updates tempType in 'userInfo' state.
+     * @param {String} type    Temperature type to set.
+     */
+    const newUserInfo = {...userInfo, tempType: type};
+    setUserInfo(newUserInfo);
+    console.log(userInfo);
+  }
+
   return (
     <div className="app">
       <Header name={userInfo.name} updateName={updateName} />
       <div className="main">
-        <Weather data={weatherData} />
+        <Weather 
+          data={weatherData}
+          tempType={userInfo.tempType}
+          updateTempType={updateTempType}
+         />
         <Todos />
       </div>
     </div>
