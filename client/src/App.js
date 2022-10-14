@@ -28,10 +28,12 @@ function App() {
   }
 
   return (
-    <div>
+    <div className="app">
       <Header name={userInfo.name} updateName={updateName} />
-      <Weather />
-      <Todos />
+      <div className="main">
+        <Weather />
+        <Todos />
+      </div>
     </div>
   );
 }
