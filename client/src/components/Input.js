@@ -25,9 +25,9 @@ export default function Input({ updateFunction, labelText, buttonText, placehold
 
   return (
     <div>
-      <label className='name-input--label'>{labelText}</label>
-      <input className="name-input--input" ref={infoRef} onKeyUp={handleKeyPress} type="text" placeholder={placeholder} />
-      <button className='name-input--button' onClick={handleUpdateInfo}>{buttonText}</button>
+      <label className='input--label'>{labelText}</label>
+      <input className='input--input' ref={infoRef} onKeyUp={handleKeyPress} type='text' placeholder={placeholder} />
+      <button className='input--button' onClick={handleUpdateInfo}>{buttonText}</button>
     </div>
   )
 }
