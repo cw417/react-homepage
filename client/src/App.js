@@ -1,8 +1,9 @@
 import './App.css';
 import Header from './components/Header';
 import Weather from './components/Weather';
-import Todos from './components/Todos';
+import TodoList from './components/TodoList';
 import React, { useState, useEffect } from 'react';
+import { v4 as uuidv4 } from 'uuid'
 
 function initialState() {
   /**
@@ -43,7 +44,6 @@ function App() {
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY_TODOS, JSON.stringify(todos));
   }, [todos])
-
   
   // get current weather
 
@@ -58,7 +58,7 @@ function App() {
     .then((data) => setWeatherData(data));
   }, [weatherApiUrl])
 
-  // functions
+  // userInfo functions
 
   function updateName(newName) {
     /**
@@ -79,16 +79,28 @@ function App() {
     console.log(userInfo);
   }
 
+  // todos functions
+  
+  function addTodo(todoInfo) {
+    /**
+     * Add new todo to 'todos' array.
+     * @param {String} todoInfo    Todo description.
+     */
+    const newTodo = {id: uuidv4(), info: todoInfo};
+    setTodos(prevTodos => {return [...prevTodos, newTodo]});
+  }
+
+
   return (
-    <div className="app">
+    <div className="flex-col">
       <Header name={userInfo.name} updateName={updateName} />
-      <div className="main">
+      <div className="flex-row">
         <Weather 
           data={weatherData}
           tempType={userInfo.tempType}
           updateTempType={updateTempType}
          />
-        <Todos />
+        <TodoList todos={todos} addTodo={addTodo} />
       </div>
     </div>
   );

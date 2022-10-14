@@ -5,14 +5,10 @@ body, html {
 /* APP */
 
 .app {
-  display: flex;
-  flex-direction: column;
   align-items: center;
 }
 
 .main {
-  display: flex;
-  flex-direction: row;
   width: 100%;
 }
 
@@ -20,6 +16,7 @@ body, html {
 
 .header {
   margin: 2rem;
+  text-align: center;
 }
 
 .header--title {
@@ -44,11 +41,30 @@ body, html {
   font-size: 1.25rem;;
 }
 
+/* TODOLIST */
+
+.container--todos {
+  display: flex;
+  flex-direction: column;
+}
+
 /* MISC */
 
-/* Buttons */
+/** Basic Styling Classes **/
 
-/** Name input submit **/
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+/** Buttons **/
+
+/*** Name input submit ***/
 
 .name-input--button {
 	padding: 0.5rem 0.5rem;
