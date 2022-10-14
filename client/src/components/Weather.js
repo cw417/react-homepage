@@ -1,3 +1,5 @@
+import ButtonGroup from "./ButtonGroup";
+
 export default function Weather({ data }) {
 
   const formattedName = `${data.name}, ${data.sys.country}`;
@@ -36,6 +38,7 @@ export default function Weather({ data }) {
   
   return (
     <div className="weather">
+      <ButtonGroup />
       <div className="weather--location">{formattedName}</div>
       <div>{capitalize(data.weather[0].description)}</div>
       <img src={icon} alt="Weather icon" />

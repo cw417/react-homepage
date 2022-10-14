@@ -48,6 +48,8 @@ body, html {
 
 /* Buttons */
 
+/** Name input submit **/
+
 .name-input--button {
 	padding: 0.5rem 0.5rem;
   font-size: 1.25rem;
@@ -71,4 +73,14 @@ body, html {
 	to {
 		background-position: 100% 0;
 	}
+}
+
+/** Weather temp type toggle **/
+
+.button-group {
+  display: flex;
+}
+
+.button-group--button:hover {
+  background-color: #2385C7;
 }
