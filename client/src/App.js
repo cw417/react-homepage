@@ -7,7 +7,6 @@ import React, { useState, useEffect } from 'react';
 function App() {
 
   const [ userInfo, setUserInfo ] = useState({ name: "", location: "toronto" });
-  const [ weatherApiData, setWeatherApiData ] = useState()
   
   // local storage setup
 
@@ -22,19 +21,6 @@ function App() {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(userInfo))
   }, [userInfo]);
 
-  // weather api setup
-
-  const weatherApiKey = process.env.REACT_APP_WEATHER_API_KEY;
-  const lat = 43.7001;
-  const lon = -79.4163;
-  const weatherApiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${weatherApiKey}`
-
-  useEffect(() => {
-    fetch(weatherApiUrl)
-      .then((res) => res.json())
-      .then((data) => setWeatherApiData(data));
-  }, [weatherApiUrl]);
-
   // functions
 
   function updateName(newName) {
@@ -46,7 +32,7 @@ function App() {
     <div className="app">
       <Header name={userInfo.name} updateName={updateName} />
       <div className="main">
-        <Weather data={weatherApiData} /> 
+        <Weather /> 
         <Todos />
       </div>
     </div>

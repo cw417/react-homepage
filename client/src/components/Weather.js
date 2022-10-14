@@ -1,6 +1,19 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
-export default function Weather({ data }) {
+export default function Weather() {
+
+  const [ data, setData ] = useState();
+  
+  const weatherApiKey = process.env.REACT_APP_WEATHER_API_KEY;
+  const lat = 43.7001;
+  const lon = -79.4163;
+  const weatherApiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${weatherApiKey}`
+
+  useEffect(() => {
+    fetch(weatherApiUrl)
+      .then((res) => res.json())
+      .then((info) => setData(info));
+  }, [weatherApiUrl]);
 
   const formattedName = `${data.name}, ${data.sys.country}`;
 
@@ -33,7 +46,6 @@ export default function Weather({ data }) {
       <div>{formattedName}</div>
       <div>Current weather: {data.weather[0].description}</div>
       <img src={icon} alt='Weather icon' />
-      <div>{JSON.stringify(data)}</div>
     </div>
   )
 }
