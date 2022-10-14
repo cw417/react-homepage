@@ -5,12 +5,16 @@ import Todos from './components/Todos';
 import React, { useState, useEffect } from 'react';
 
 function initialState() {
-  return { name: "", sys: {country: ""}, weather: [{description: "", icon: ""}] }
+  /**
+   * A blank initial state is needed so that the Weather component does not
+   * try to access   API data before it has been fetched.
+   */
+  return { name: "", sys: {country: ""}, weather: [{description: "", icon: ""}], main: {temp: 0, temp_min: 0, temp_max: 0, feels_like: 0} }
 }
 
 function App() {
 
-  const [ userInfo, setUserInfo ] = useState({ name: "", location: "toronto" });
+  const [ userInfo, setUserInfo ] = useState({ name: "" });
   const [ weatherData, setWeatherData ] = useState(initialState());
   
   // local storage setup
@@ -42,6 +46,10 @@ function App() {
   // functions
 
   function updateName(newName) {
+    /**
+     * Updates name in 'userInfo' state.
+     * @param {String} newName    New name to add.
+     */
     const newUserInfo = {...userInfo, name: newName};
     setUserInfo(newUserInfo);
   }
