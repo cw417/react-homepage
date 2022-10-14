@@ -2,6 +2,8 @@ body, html {
   background-color: grey;
 }
 
+/* APP */
+
 .app {
   display: flex;
   flex-direction: column;
@@ -14,6 +16,53 @@ body, html {
   width: 100%;
 }
 
+/* HEADER */
+
+.header {
+  margin: 2rem;
+}
+
+.name-input--label {
+  font-size: 1.25rem;
+}
+
+.name-input--input {
+  margin: 0 0.5rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 2rem;
+}
+
+/* WEATHER */
+
 .weather {
-  width: 25%;
+  width: 20%;
+}
+
+/* MISC */
+
+/* Buttons */
+
+.name-input--button {
+	padding: 0.5rem 0.5rem;
+  font-size: 1.25rem;
+  cursor: pointer;
+	border-radius: 7px;
+  background-color: #3498db;
+  color: #fff;
+  border: 1px solid #fff;
+	transition: all 0.3s;
+}
+
+.name-input--button:hover {
+  border-radius: 0px;
+  background-color: #2385C7;
+}
+
+@keyframes animatedBackground {
+	from {
+		background-position: 0 0;
+	}
+	to {
+		background-position: 100% 0;
+	}
 }
