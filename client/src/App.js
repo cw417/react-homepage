@@ -10,12 +10,12 @@ function initialState() {
    * A blank initial state is needed so that the Weather component does not
    * try to access API data before it has been fetched.
    */
-  return { name: "", sys: {country: ""}, weather: [{description: "", icon: ""}], main: {temp: 0, temp_min: 0, temp_max: 0, feels_like: 0} }
+  return { name: '', sys: {country: ''}, weather: [{description: '', icon: ''}], main: {temp: 0, temp_min: 0, temp_max: 0, feels_like: 0} }
 }
 
 function App() {
 
-  const [ userInfo, setUserInfo ] = useState({ name: "", tempType: "C" });
+  const [ userInfo, setUserInfo ] = useState({ name: '', tempType: 'C' });
   const [ weatherData, setWeatherData ] = useState(initialState());
   const [ todos, setTodos ] = useState([]);
   
@@ -76,7 +76,6 @@ function App() {
      */
     const newUserInfo = {...userInfo, tempType: type};
     setUserInfo(newUserInfo);
-    console.log(userInfo);
   }
 
   // todos functions
@@ -99,9 +98,9 @@ function App() {
   }
 
   return (
-    <div className="flex-col">
+    <div className='flex-col'>
       <Header name={userInfo.name} updateName={updateName} />
-      <div className="flex-row">
+      <div className='flex-row'>
         <Weather 
           data={weatherData}
           tempType={userInfo.tempType}

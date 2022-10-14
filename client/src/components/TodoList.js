@@ -4,14 +4,14 @@ import Input from './Input'
 
 export default function TodoList({ todos, addTodo, deleteTodo }) {
   return (
-    <div className="flex-col">
+    <div className='flex-col'>
       <Input 
-        labelText={""}
-        buttonText={"Add"}
-        placeholder={"Todo"}
+        labelText={''}
+        buttonText={'Add'}
+        placeholder={'Todo'}
         updateFunction={addTodo}
       />
-      <div className="flex-col">
+      <div className='flex-col'>
         <Todos todos={todos} deleteTodo={deleteTodo} />
       </div>
     </div>

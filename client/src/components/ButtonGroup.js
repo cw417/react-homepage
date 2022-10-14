@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import ButtonToggle from './ButtonToggle';
 
-const types = ["C", "F"];
+const types = ['C', 'F'];
 
 export default function ButtonGroup({ updateTempType }) {
   /* Button group for toggling temperature display between C and F */

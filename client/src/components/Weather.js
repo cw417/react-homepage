@@ -1,5 +1,5 @@
-import ButtonGroup from "./ButtonGroup";
-import React, { useEffect } from "react";
+import ButtonGroup from './ButtonGroup';
+import React, { useEffect } from 'react';
 
 export default function Weather({ data, tempType, updateTempType }) {
 
@@ -11,22 +11,22 @@ export default function Weather({ data, tempType, updateTempType }) {
   const formattedName = `${data.name}, ${data.sys.country}`;
   const icon = `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
 
-  const tempC = Math.round(convertTempKC(data.main.temp)) + "\u2103;";
-  const feelsLikeC = Math.round(convertTempKC(data.main.feels_like)) + "\u2103;";
-  const tempMinC = Math.round(convertTempKC(data.main.temp_min)) + "\u2103;";
-  const tempMaxC = Math.round(convertTempKC(data.main.temp_max)) + "\u2103;";
+  const tempC = Math.round(convertTempKC(data.main.temp)) + '\u2103;';
+  const feelsLikeC = Math.round(convertTempKC(data.main.feels_like)) + '\u2103;';
+  const tempMinC = Math.round(convertTempKC(data.main.temp_min)) + '\u2103;';
+  const tempMaxC = Math.round(convertTempKC(data.main.temp_max)) + '\u2103;';
 
-  const tempF = Math.round(convertTempKF(data.main.temp)) + "\u2109;";
-  const feelsLikeF = Math.round(convertTempKF(data.main.feels_like)) + "\u2109;";
-  const tempMinF = Math.round(convertTempKF(data.main.temp_min)) + "\u2109;";
-  const tempMaxF = Math.round(convertTempKF(data.main.temp_max)) + "\u2109;";
+  const tempF = Math.round(convertTempKF(data.main.temp)) + '\u2109;';
+  const feelsLikeF = Math.round(convertTempKF(data.main.feels_like)) + '\u2109;';
+  const tempMinF = Math.round(convertTempKF(data.main.temp_min)) + '\u2109;';
+  const tempMaxF = Math.round(convertTempKF(data.main.temp_max)) + '\u2109;';
 
   function capitalize(s) {
     /**
      * Capitalize the first character of a string.
      * @param {String} s  string to capitalize
      */
-    if (s.length === 0) {return ""};
+    if (s.length === 0) {return ''};
     if (s.length === 1) {return s};
     return s[0].toUpperCase() + s.slice(1);
   }
@@ -48,11 +48,11 @@ export default function Weather({ data, tempType, updateTempType }) {
   }
   
   return (
-    <div className="weather">
+    <div className='weather'>
       <ButtonGroup updateTempType={updateTempType} />
-      <div className="weather--location">{formattedName}</div>
+      <div className='weather--location'>{formattedName}</div>
       <div>{capitalize(data.weather[0].description)}</div>
-      <img src={icon} alt="Weather icon" />
+      <img src={icon} alt='Weather icon' />
       <div style={{display: displayC}}
       >
         <div>Temp: {tempC}</div>
