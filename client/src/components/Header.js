@@ -1,4 +1,5 @@
 import React, { useRef } from 'react'
+import Input from './Input';
 
 export default function Header({ name, updateName }) {
 
@@ -23,9 +24,12 @@ export default function Header({ name, updateName }) {
     <div className='header'>
       <div className='header--title' style={{display:(name === "") ? "none" : "block"}}>Hello, {name}!</div>
       <div style={{display:(name === "") ? "block" : "none"}}>
-        <label className='name-input--label'>What is your name?</label>
-        <input className="name-input--input" ref={nameRef} onKeyUp={handleKeyPress} type="text" />
-        <button className='name-input--button' onClick={handleUpdateName}>Update</button>
+        <Input 
+          updateFunction={updateName}
+          labelText={"What is your name?"}
+          buttonText={"Update"}
+          placeholder={"Name"}
+        />
       </div>
     </div>
   )
