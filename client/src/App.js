@@ -46,7 +46,7 @@ function App() {
     <div className="app">
       <Header name={userInfo.name} updateName={updateName} />
       <div className="main">
-        <Weather data={weatherApiData} />
+        <Weather data={weatherApiData} /> 
         <Todos />
       </div>
     </div>
