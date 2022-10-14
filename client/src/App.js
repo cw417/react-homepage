@@ -8,7 +8,7 @@ import { v4 as uuidv4 } from 'uuid'
 function initialState() {
   /**
    * A blank initial state is needed so that the Weather component does not
-   * try to access   API data before it has been fetched.
+   * try to access API data before it has been fetched.
    */
   return { name: "", sys: {country: ""}, weather: [{description: "", icon: ""}], main: {temp: 0, temp_min: 0, temp_max: 0, feels_like: 0} }
 }
@@ -90,6 +90,13 @@ function App() {
     setTodos(prevTodos => {return [...prevTodos, newTodo]});
   }
 
+  function deleteTodo(id) {
+    /**
+     * Delete a todo from the 'todos' array.
+     * @param {String} id    ID of the todo.
+     */
+    setTodos(prevTodos => prevTodos.filter(todo => todo.id !== id));
+  }
 
   return (
     <div className="flex-col">
@@ -100,7 +107,7 @@ function App() {
           tempType={userInfo.tempType}
           updateTempType={updateTempType}
          />
-        <TodoList todos={todos} addTodo={addTodo} />
+        <TodoList todos={todos} addTodo={addTodo} deleteTodo={deleteTodo} />
       </div>
     </div>
   );

@@ -2,7 +2,7 @@ import React from 'react'
 import Todos from './Todos'
 import Input from './Input'
 
-export default function TodoList({ todos, addTodo }) {
+export default function TodoList({ todos, addTodo, deleteTodo }) {
   return (
     <div className="flex-col">
       <Input 
@@ -12,7 +12,7 @@ export default function TodoList({ todos, addTodo }) {
         updateFunction={addTodo}
       />
       <div className="flex-col">
-        <Todos todos={todos} />
+        <Todos todos={todos} deleteTodo={deleteTodo} />
       </div>
     </div>
   )
