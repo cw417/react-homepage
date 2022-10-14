@@ -2,10 +2,11 @@ import './App.css';
 import Header from './components/Header';
 import Weather from './components/Weather';
 import TodoList from './components/TodoList';
+import NewsFeed from './components/NewsFeed';
 import React, { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid'
 
-function initialState() {
+function initialStateWeather() {
   /**
    * A blank initial state is needed so that the Weather component does not
    * try to access API data before it has been fetched.
@@ -13,11 +14,16 @@ function initialState() {
   return { name: '', sys: {country: ''}, weather: [{description: '', icon: ''}], main: {temp: 0, temp_min: 0, temp_max: 0, feels_like: 0} }
 }
 
+function initialStateNews() {
+  return { articles: ['one', 'two', 'three'] }
+}
+
 function App() {
 
   const [ userInfo, setUserInfo ] = useState({ name: '', city: 'Toronto', tempType: 'C' });
-  const [ weatherData, setWeatherData ] = useState(initialState());
+  const [ weatherData, setWeatherData ] = useState(initialStateWeather());
   const [ todos, setTodos ] = useState([]);
+  const [ newsData, setNewsData ] = useState(initialStateNews())
   
   // local storage setup for 'userInfo'
 
@@ -55,6 +61,19 @@ function App() {
     .then((res) => res.json())
     .then((data) => setWeatherData(data));
   }, [weatherApiUrl, userInfo.city])
+
+  // get news
+
+  const newsApiKey = process.env.REACT_APP_NEWS_API_KEY;
+  const country = 'us'
+  const newsApiUrl = `https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${newsApiKey}`
+
+  useEffect(() => {
+    fetch(newsApiUrl)
+    .then((res) => res.json())
+    .then((data) => setNewsData(data));
+    console.log(newsData);
+  }, [])
 
   // userInfo functions
 
@@ -116,6 +135,7 @@ function App() {
          />
         <TodoList todos={todos} addTodo={addTodo} deleteTodo={deleteTodo} />
       </div>
+      <NewsFeed newsData={newsData}  />
     </div>
   );
 }
