@@ -10,7 +10,7 @@ export default function Todo({ todo, deleteTodo }) {
   return (
     <div className='m-bt-05'>
       <button onClick={handleDelete}><FiTrash /></button>
-      <span className='m-xy-05'>{todo.info}</span>
+      <span className='m-rl-05'>{todo.info}</span>
     </div>
   )
 }
