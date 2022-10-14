@@ -16,20 +16,35 @@ function App() {
 
   const [ userInfo, setUserInfo ] = useState({ name: "", tempType: "C" });
   const [ weatherData, setWeatherData ] = useState(initialState());
+  const [ todos, setTodos ] = useState([]);
   
-  // local storage setup
+  // local storage setup for 'userInfo'
 
-  const LOCAL_STORAGE_KEY = 'homepageApp.info'
+  const LOCAL_STORAGE_KEY_INFO = 'homepageApp.info'
 
   useEffect(() => {
-    const storedUserInfo = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+    const storedUserInfo = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY_INFO));
     if (storedUserInfo) setUserInfo(storedUserInfo);
   }, []);
 
   useEffect(() => {
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(userInfo))
+    localStorage.setItem(LOCAL_STORAGE_KEY_INFO, JSON.stringify(userInfo))
   }, [userInfo]);
+  
+  // local storage setup for 'todos'
 
+  const LOCAL_STORAGE_KEY_TODOS = 'homepageApp.todos'
+  
+  useEffect(() => {
+    const storedTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY_TODOS))
+    if (storedTodos) setTodos(storedTodos);
+  }, [])
+  
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_KEY_TODOS, JSON.stringify(todos));
+  }, [todos])
+
+  
   // get current weather
 
   const weatherApiKey = process.env.REACT_APP_WEATHER_API_KEY;

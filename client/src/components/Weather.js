@@ -16,23 +16,10 @@ export default function Weather({ data, tempType, updateTempType }) {
   const tempMinC = Math.round(convertTempKC(data.main.temp_min)) + "\u2103;";
   const tempMaxC = Math.round(convertTempKC(data.main.temp_max)) + "\u2103;";
 
-  const tempF = Math.round(convertTempKF(data.main.temp)) + "\u2103;";
-  const feelsLikeF = Math.round(convertTempKF(data.main.feels_like)) + "\u2103;";
-  const tempMinF = Math.round(convertTempKF(data.main.temp_min)) + "\u2103;";
-  const tempMaxF = Math.round(convertTempKF(data.main.temp_max)) + "\u2103;";
-
-
-  //useEffect(() => {
-  //  console.log(tempType)
-  //  if (tempType == 'F') {
-  //    displayF = 'block';
-  //    displayC = 'none'
-  //  }
-  //  else {
-  //    displayC = 'block';
-  //    displayF = 'none'
-  //  }
-  //}, [tempType])
+  const tempF = Math.round(convertTempKF(data.main.temp)) + "\u2109;";
+  const feelsLikeF = Math.round(convertTempKF(data.main.feels_like)) + "\u2109;";
+  const tempMinF = Math.round(convertTempKF(data.main.temp_min)) + "\u2109;";
+  const tempMaxF = Math.round(convertTempKF(data.main.temp_max)) + "\u2109;";
 
   function capitalize(s) {
     /**
