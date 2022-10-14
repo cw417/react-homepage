@@ -5,7 +5,12 @@ export default function Input({ updateFunction, labelText, buttonText, placehold
   const infoRef = useRef();
 
   function handleUpdateInfo() {
+    /**
+     * Calls the update function and passes in the infoRef as a string.
+     * Clears the inputRef when finished.
+     */
     updateFunction(infoRef.current.value);
+    infoRef.current.value = null;
   }
 
   function handleKeyPress(event) {
