@@ -23,14 +23,32 @@ body, html {
   font-size: 2rem;;
 }
 
-.name-input--label {
+/* INPUT */
+
+.input--label {
   font-size: 1.25rem;
 }
 
-.name-input--input {
+.input--input {
   margin: 0 0.5rem;
   padding: 0.25rem 0.5rem;
   border-radius: 2rem;
+}
+
+.input--button {
+	padding: 0.5rem 0.5rem;
+  font-size: 1.25rem;
+  cursor: pointer;
+	border-radius: 7px;
+  background-color: #3498db;
+  color: #fff;
+  border: 1px solid #fff;
+	transition: all 0.3s;
+}
+
+.input--button:hover {
+  border-radius: 0px;
+  background-color: #2385C7;
 }
 
 /* WEATHER */
@@ -52,6 +70,16 @@ body, html {
 
 /** Basic Styling Classes **/
 
+.m-xy-05 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.m-bt-05 {
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+
 .flex-col {
   display: flex;
   flex-direction: column;
@@ -60,43 +88,4 @@ body, html {
 .flex-row {
   display: flex;
   flex-direction: row;
-}
-
-/** Buttons **/
-
-/*** Name input submit ***/
-
-.name-input--button {
-	padding: 0.5rem 0.5rem;
-  font-size: 1.25rem;
-  cursor: pointer;
-	border-radius: 7px;
-  background-color: #3498db;
-  color: #fff;
-  border: 1px solid #fff;
-	transition: all 0.3s;
-}
-
-.name-input--button:hover {
-  border-radius: 0px;
-  background-color: #2385C7;
-}
-
-@keyframes animatedBackground {
-	from {
-		background-position: 0 0;
-	}
-	to {
-		background-position: 100% 0;
-	}
-}
-
-/** Weather temp type toggle **/
-
-.button-group {
-  display: flex;
-}
-
-.button-group--button:hover {
-  background-color: #2385C7;
 }
