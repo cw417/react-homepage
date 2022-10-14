@@ -1,7 +1,9 @@
 import ButtonGroup from './ButtonGroup';
+import Input from './Input';
 import React, { useEffect } from 'react';
+import { FiEdit } from 'react-icons/fi';
 
-export default function Weather({ data, tempType, updateTempType }) {
+export default function Weather({ data, tempType, updateTempType, updateCity }) {
 
   
   const displayC = (tempType === 'C') ? 'block' : 'none';
@@ -49,8 +51,15 @@ export default function Weather({ data, tempType, updateTempType }) {
   
   return (
     <div className='weather'>
-      <ButtonGroup updateTempType={updateTempType} />
-      <div className='weather--location'>{formattedName}</div>
+      <div>
+        <ButtonGroup updateTempType={updateTempType} />
+        <Input
+          updateFunction={updateCity}
+          buttonText={<FiEdit />}
+          placeholder={"City"}
+        />
+      </div>
+      <div>{formattedName}</div>
       <div>{capitalize(data.weather[0].description)}</div>
       <img src={icon} alt='Weather icon' />
       <div style={{display: displayC}}

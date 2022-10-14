@@ -15,7 +15,7 @@ function initialState() {
 
 function App() {
 
-  const [ userInfo, setUserInfo ] = useState({ name: '', tempType: 'C' });
+  const [ userInfo, setUserInfo ] = useState({ name: '', city: 'Toronto', tempType: 'C' });
   const [ weatherData, setWeatherData ] = useState(initialState());
   const [ todos, setTodos ] = useState([]);
   
@@ -48,24 +48,31 @@ function App() {
   // get current weather
 
   const weatherApiKey = process.env.REACT_APP_WEATHER_API_KEY;
-  const lat = 43.7001;
-  const lon = -79.4163;
-  const weatherApiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${weatherApiKey}`
+  const weatherApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${userInfo.city}&appid=${weatherApiKey}`
 
   useEffect(() => {
     fetch(weatherApiUrl)
     .then((res) => res.json())
     .then((data) => setWeatherData(data));
-  }, [weatherApiUrl])
+  }, [weatherApiUrl, userInfo.city])
 
   // userInfo functions
 
   function updateName(newName) {
     /**
      * Updates name in 'userInfo' state.
-     * @param {String} newName    New name to add.
+     * @param {String} newName    New name to set.
      */
     const newUserInfo = {...userInfo, name: newName};
+    setUserInfo(newUserInfo);
+  }
+
+  function updateCity(newCity) {
+    /**
+     * Updates city in 'userInfo' state.
+     * @param {String} newCity    New city to set.
+     */
+    const newUserInfo = {...userInfo, city: newCity};
     setUserInfo(newUserInfo);
   }
 
@@ -105,6 +112,7 @@ function App() {
           data={weatherData}
           tempType={userInfo.tempType}
           updateTempType={updateTempType}
+          updateCity={updateCity}
          />
         <TodoList todos={todos} addTodo={addTodo} deleteTodo={deleteTodo} />
       </div>
