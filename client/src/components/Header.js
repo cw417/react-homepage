@@ -1,25 +1,7 @@
-import React, { useRef } from 'react'
 import Input from './Input';
 import Clock from './Clock';
 
 export default function Header({ name, updateName }) {
-
-  const nameRef = useRef();
-
-  function handleUpdateName() {
-    updateName(nameRef.current.value);
-  }
-
-  function handleKeyPress(event) {
-    /**
-     * Watches for 'Enter' keypress.
-     * @param event  Keypress event watching for 'Enter' key.
-     */
-    if (event.keyCode === 13 || event.which === 13) {
-      handleUpdateName();
-    }
-  }
-
 
   return (
     <div className='header'>

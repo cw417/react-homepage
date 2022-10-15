@@ -72,7 +72,7 @@ function App() {
     fetch(newsApiUrl)
     .then((res) => res.json())
     .then((data) => setNewsData(data));
-  }, [])
+  }, [newsApiUrl])
 
   // userInfo functions
 

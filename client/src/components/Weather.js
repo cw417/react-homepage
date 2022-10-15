@@ -1,6 +1,6 @@
 import ButtonGroup from './ButtonGroup';
 import Input from './Input';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { FiRepeat } from 'react-icons/fi';
 
 export default function Weather({ data, tempType, updateTempType, updateCity }) {
