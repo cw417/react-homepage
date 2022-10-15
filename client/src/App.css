@@ -2,16 +2,20 @@
   --outer-margin: 3rem;
   --button-blue: #3498db;
   --button-blue-hover: #2385C7;
+  --main-font-color: #fff;
+  --background-color-secondary: #606060;
+  --background-color: #8d8d8d;
 }
 
 body, html {
-  background-color: grey;
+  background-color: var(--background-color);
+  color: var(--main-font-color);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 a {
   text-decoration: none;
-  color: black;
+  color: var(--main-font-color);
 }
 
 /* APP */
@@ -22,6 +26,10 @@ a {
 
 .main {
   width: 100%;
+}
+
+.weather-todolist {
+  display: flex;
 }
 
 /* HEADER */
@@ -43,18 +51,38 @@ a {
 
 /* INPUT */
 
+.input--container {
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
 .input--label {
   font-size: 1.25rem;
 }
 
 .input--input {
-  margin-right: 0.5rem;
-  padding: 0.25rem 0.5rem;
+  margin: 0.5rem 0.25rem;
+  padding: 0.35rem 1rem;
   border-radius: 2rem;
+  font-size: 1rem;
+}
+
+.input--input::placeholder {
+  font-size: 1rem;
 }
 
 .input--button {
-	padding: 0.5rem 0.5rem;
+	padding: 0.25rem 0.5rem;
+  font-size: 1.25rem;
+}
+
+/* WEATHER */
+
+.temp-type-button {
+  height: 2rem;
+  width: 2rem;
   font-size: 1.25rem;
 }
 
@@ -88,7 +116,7 @@ a {
   border: 2px solid black;
   border-radius: 15px;
   padding: 1rem;
-  background-color: lightgray;
+  background-color: var(--background-color-secondary);
   height: 85%; /* Keeps all boxes same height */
 }
 
@@ -106,7 +134,7 @@ a {
   cursor: pointer;
   border-radius: 7px;
   background-color: var(--button-blue);
-  color: #fff;
+  color: var(--main-font-color);
   border: 1px solid #fff;
 	transition: all 0.3s;
 }
@@ -122,6 +150,7 @@ a {
   border: 2px solid black;
   border-radius: 15px;;
   padding: 2rem;
+  background-color: var(--background-color-secondary);
 }
 
 .container-title {
@@ -146,4 +175,30 @@ a {
 
 .text-center {
   text-align: center;
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 768px) {
+  .weather-todolist {
+    margin: 0 4rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .todolist {
+    margin-top: 2rem;;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    margin: 0 1rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .newsfeed {
+    grid-template-columns: repeat(4, 23%);
+  }
 }

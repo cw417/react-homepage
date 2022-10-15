@@ -26,7 +26,7 @@ export default function Input({ updateFunction, labelText, buttonText, placehold
   }
 
   return (
-    <div>
+    <div className='input--container'>
       <label className='input--label'>{labelText}</label>
       <input className='input--input' ref={infoRef} onKeyUp={handleKeyPress} type='text' placeholder={placeholder} />
       <button className='button input--button' onClick={handleUpdateInfo}>{buttonText}</button>

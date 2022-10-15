@@ -14,6 +14,7 @@ export default function ButtonToggle({ type, active, toggleActive, updateTempTyp
 
   return (
     <button
+    className='button temp-type-button'
       style={{opacity:opacity}}
       onClick={handleClick}
     >

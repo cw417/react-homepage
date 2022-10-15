@@ -125,7 +125,7 @@ function App() {
   return (
     <div className='flex-col'>
       <Header name={userInfo.name} updateName={updateName} />
-      <div className='flex-row center weather-todolist'>
+      <div className='center weather-todolist'>
         <Weather 
           data={weatherData}
           tempType={userInfo.tempType}
