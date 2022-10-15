@@ -9,7 +9,9 @@ export default function Input({ updateFunction, labelText, buttonText, placehold
      * Calls the update function and passes in the infoRef as a string.
      * Clears the inputRef when finished.
      */
-    updateFunction(infoRef.current.value);
+    const info = infoRef.current.value;
+    if (info === '') return;
+    updateFunction(info);
     infoRef.current.value = null;
   }
 
