@@ -17,6 +17,15 @@ body, html {
   width: 100%;
 }
 
+.weather-todolist {
+  /* 
+  Can't figure out why this div sets the containers slightly off center
+  in relation to the newsfeed articles.
+  Adding to the margin helps but does not makie it perfect.
+  */
+  margin-right: 1rem;
+}
+
 /* HEADER */
 
 .header {
@@ -96,16 +105,6 @@ body, html {
   margin-bottom: 1rem;
   font-size: 1.5rem;
   font-weight: bold;
-}
-
-.m-rl-05 {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-}
-
-.m-bt-05 {
-  margin-bottom: 0.5rem;
-  margin-top: 0.5rem;
 }
 
 .flex-col {
