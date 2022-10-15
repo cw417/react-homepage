@@ -1,5 +1,6 @@
 import React, { useRef } from 'react'
 import Input from './Input';
+import Clock from './Clock';
 
 export default function Header({ name, updateName }) {
 
@@ -31,6 +32,7 @@ export default function Header({ name, updateName }) {
           placeholder={'Name'}
         />
       </div>
+      <Clock />
     </div>
   )
 }
