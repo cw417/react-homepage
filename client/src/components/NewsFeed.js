@@ -12,9 +12,10 @@ export default function NewsFeed({ newsData }) {
       })
     )
   }
+
   return (
     <div>
-      <div>{articles()}</div>
+      <div className='newsfeed'>{articles()}</div>
     </div>
   )
 }

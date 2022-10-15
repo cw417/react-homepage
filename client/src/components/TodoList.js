@@ -16,7 +16,8 @@ export default function TodoList({ todos, addTodo, deleteTodo }) {
   }
 
   return (
-    <div className='flex-col'>
+    <div className='todolist flex-col'>
+      <div className='text-center container-title'>Todo List</div>
       <Input 
         labelText={''}
         buttonText={<FiPlus />}

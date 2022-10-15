@@ -50,7 +50,9 @@ export default function Weather({ data, tempType, updateTempType, updateCity }) 
   }
   
   return (
+    <div>
     <div className='weather'>
+      <div className='text-center container-title'>Weather</div>
       <div>
         <Input
           updateFunction={updateCity}
@@ -76,6 +78,7 @@ export default function Weather({ data, tempType, updateTempType, updateCity }) 
         <div>Min: {tempMinF}</div>
         <div>Max: {tempMaxF}</div>
       </div>
+    </div>
     </div>
   )
 }
