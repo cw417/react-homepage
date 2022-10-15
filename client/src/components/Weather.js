@@ -51,7 +51,7 @@ export default function Weather({ data, tempType, updateTempType, updateCity }) 
   
   return (
     <div>
-    <div className='weather'>
+    <div className='container'>
       <div className='text-center container-title'>Weather</div>
       <div>
         <Input
