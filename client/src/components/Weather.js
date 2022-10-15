@@ -52,12 +52,12 @@ export default function Weather({ data, tempType, updateTempType, updateCity }) 
   return (
     <div className='weather'>
       <div>
-        <ButtonGroup updateTempType={updateTempType} />
         <Input
           updateFunction={updateCity}
           buttonText={<FiEdit />}
           placeholder={"City"}
         />
+        <ButtonGroup updateTempType={updateTempType} />
       </div>
       <div>{formattedName}</div>
       <div>{capitalize(data.weather[0].description)}</div>
