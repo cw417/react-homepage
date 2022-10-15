@@ -15,7 +15,7 @@ export default function NewsFeed({ newsData }) {
 
   return (
     <div>
-      <div className='newsfeed'>{articles()}</div>
+      <div className='newsfeed center'>{articles()}</div>
     </div>
   )
 }

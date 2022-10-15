@@ -29,7 +29,7 @@ export default function Input({ updateFunction, labelText, buttonText, placehold
     <div>
       <label className='input--label'>{labelText}</label>
       <input className='input--input' ref={infoRef} onKeyUp={handleKeyPress} type='text' placeholder={placeholder} />
-      <button className='input--button' onClick={handleUpdateInfo}>{buttonText}</button>
+      <button className='button input--button' onClick={handleUpdateInfo}>{buttonText}</button>
     </div>
   )
 }

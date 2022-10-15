@@ -1,7 +1,7 @@
 import ButtonGroup from './ButtonGroup';
 import Input from './Input';
 import React, { useEffect } from 'react';
-import { FiEdit } from 'react-icons/fi';
+import { FiRepeat } from 'react-icons/fi';
 
 export default function Weather({ data, tempType, updateTempType, updateCity }) {
 
@@ -56,7 +56,7 @@ export default function Weather({ data, tempType, updateTempType, updateCity }) 
       <div>
         <Input
           updateFunction={updateCity}
-          buttonText={<FiEdit />}
+          buttonText={<FiRepeat />}
           placeholder={"City"}
         />
         <ButtonGroup updateTempType={updateTempType} />

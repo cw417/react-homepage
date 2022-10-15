@@ -1,5 +1,5 @@
 import React from 'react'
-import { FiTrash } from 'react-icons/fi'
+import { FiMinus } from 'react-icons/fi'
 
 export default function Todo({ todo, deleteTodo }) {
 
@@ -8,9 +8,9 @@ export default function Todo({ todo, deleteTodo }) {
   }
 
   return (
-    <div className='m-bt-05'>
-      <button onClick={handleDelete}><FiTrash /></button>
-      <span className='m-rl-05'>{todo.info}</span>
+    <div className='todo'>
+      <button className='todo-delete button' onClick={handleDelete}><FiMinus /></button>
+      <span>{todo.info}</span>
     </div>
   )
 }

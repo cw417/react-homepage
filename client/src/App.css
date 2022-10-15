@@ -1,10 +1,17 @@
 :root {
-  --outer-margin: 4rem;
+  --outer-margin: 3rem;
+  --button-blue: #3498db;
+  --button-blue-hover: #2385C7;
 }
 
 body, html {
   background-color: grey;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
 
 /* APP */
@@ -17,15 +24,6 @@ body, html {
   width: 100%;
 }
 
-.weather-todolist {
-  /* 
-  Can't figure out why this div sets the containers slightly off center
-  in relation to the newsfeed articles.
-  Adding to the margin helps but does not makie it perfect.
-  */
-  margin-right: 1rem;
-}
-
 /* HEADER */
 
 .header {
@@ -34,7 +32,13 @@ body, html {
 }
 
 .header--title {
-  font-size: 2rem;;
+  font-size: 2.5rem;;
+}
+
+/* CLOCK */
+
+.clock {
+  font-size: 1.5rem;
 }
 
 /* INPUT */
@@ -52,17 +56,19 @@ body, html {
 .input--button {
 	padding: 0.5rem 0.5rem;
   font-size: 1.25rem;
-  cursor: pointer;
-	border-radius: 7px;
-  background-color: #3498db;
-  color: #fff;
-  border: 1px solid #fff;
-	transition: all 0.3s;
 }
 
-.input--button:hover {
-  border-radius: 0px;
-  background-color: #2385C7;
+/* TODOLIST */
+
+.todo {
+  margin-top: 0.5rem;
+}
+
+.todo-delete {
+  margin-right: 0.5rem;
+  height: 2rem;
+  width: 2rem;
+  font-size: 1rem;
 }
 
 /* NEWSFEED */
@@ -83,15 +89,32 @@ body, html {
   border-radius: 15px;
   padding: 1rem;
   background-color: lightgray;
+  height: 85%; /* Keeps all boxes same height */
 }
 
 .news-article:hover {
   background-color: lightblue;
 }
 
+.news-article-title {
+  font-size: 1.25rem;
+}
+
 /* MISC */
 
-/** Basic Styling Classes **/
+.button {
+  cursor: pointer;
+  border-radius: 7px;
+  background-color: var(--button-blue);
+  color: #fff;
+  border: 1px solid #fff;
+	transition: all 0.3s;
+}
+
+.button:hover {
+  background-color: var(--button-blue-hover);
+  border-radius: 0px;
+}
 
 .container {
   margin: 0 var(--outer-margin);
@@ -117,7 +140,7 @@ body, html {
   flex-direction: row;
 }
 
-.flex-center {
+.center {
   justify-content: center;
 }
 

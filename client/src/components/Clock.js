@@ -19,6 +19,6 @@ export default function Clock() {
   }
 
   return (
-    <span>{date.toLocaleTimeString()}</span>
+    <span className='clock'>{date.toLocaleTimeString()}</span>
   )
 }
