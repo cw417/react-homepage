@@ -1,18 +1,30 @@
 import React from 'react'
-import Todos from './Todos'
+import Todo from './Todo'
 import Input from './Input'
+import { FiPlus } from 'react-icons/fi'
 
 export default function TodoList({ todos, addTodo, deleteTodo }) {
+
+  function createList() {
+    return (
+      todos.map(todo => {
+        return (
+          <Todo key={todo.id} todo={todo} deleteTodo={deleteTodo} />
+        )
+      })
+    )
+  }
+
   return (
     <div className='flex-col'>
       <Input 
         labelText={''}
-        buttonText={'Add'}
+        buttonText={<FiPlus />}
         placeholder={'Todo'}
         updateFunction={addTodo}
       />
       <div className='flex-col'>
-        <Todos todos={todos} deleteTodo={deleteTodo} />
+        {createList()}
       </div>
     </div>
   )

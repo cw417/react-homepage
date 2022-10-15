@@ -72,7 +72,6 @@ function App() {
     fetch(newsApiUrl)
     .then((res) => res.json())
     .then((data) => setNewsData(data));
-    console.log(newsData);
   }, [])
 
   // userInfo functions

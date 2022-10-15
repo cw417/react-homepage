@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Article({ article }) {
+export default function NewsArticle({ article }) {
   return (
     <div className='m-bt-05'>
         <div>{article.source.name}

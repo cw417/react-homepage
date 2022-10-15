@@ -1,5 +1,5 @@
 import React from 'react'
-import Article from './Article'
+import NewsArticle from './NewsArticle'
 
 export default function NewsFeed({ newsData }) {
 
@@ -7,7 +7,7 @@ export default function NewsFeed({ newsData }) {
     return (
       newsData.articles.map((article, index) => {
         return (
-          <Article key={index} article={article} />
+          <NewsArticle key={index} article={article} />
         )
       })
     )
