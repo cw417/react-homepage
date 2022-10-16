@@ -7,9 +7,9 @@ export default function Header({ name, updateName }) {
     <div className='header'>
       <div className='header--title' style={{display:(name === '') ? 'none' : 'block'}}>Hello, {name}!</div>
       <div style={{display:(name === '') ? 'block' : 'none'}}>
+        <div className='font-15'>What is your name?</div>
         <Input 
           updateFunction={updateName}
-          labelText={'What is your name?'}
           buttonText={'Update'}
           placeholder={'Name'}
         />

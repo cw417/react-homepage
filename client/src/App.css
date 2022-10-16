@@ -3,8 +3,8 @@
   --button-blue: #3498db;
   --button-blue-hover: #2385C7;
   --main-font-color: #fff;
-  --background-color-secondary: #606060;
-  --background-color: #8d8d8d;
+  --background-color: #dfe6e9;
+  --background-color-secondary:#2385C7;
 }
 
 body, html {
@@ -35,12 +35,16 @@ a {
 /* HEADER */
 
 .header {
-  margin: var(--outer-margin);
   text-align: center;
+  background-color: var(--background-color-secondary);
+  width: 100%;
+  border-radius: 15px;
+  padding: 2rem 0;
+  margin-bottom: 2rem;
 }
 
 .header--title {
-  font-size: 2.5rem;;
+  font-size: 2.5rem;
 }
 
 /* CLOCK */
@@ -175,6 +179,14 @@ a {
 
 .text-center {
   text-align: center;
+}
+
+.font-15 {
+  font-size: 1.5rem;
+}
+
+.font-2 {
+  font-size: 2rem;
 }
 
 .mt-2 {
