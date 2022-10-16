@@ -129,7 +129,7 @@ function App() {
   }
 
   return (
-    <div className='flex-col'>
+    <div className='flex-col app'>
       <Header name={userInfo.name} updateName={updateName} />
       <div className='center weather-todolist'>
         <Weather 

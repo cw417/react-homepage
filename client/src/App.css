@@ -21,7 +21,8 @@ a {
 /* APP */
 
 .app {
-  align-items: center;
+  width: 75%;
+  margin: auto;
 }
 
 .main {
@@ -30,6 +31,8 @@ a {
 
 .weather-todolist {
   display: flex;
+  max-width: 75%;
+  margin: auto;
 }
 
 /* HEADER */
@@ -213,10 +216,29 @@ a {
 }
 
 /* RESPONSIVE */
-
 @media screen and (max-width: 768px) {
+
+  .app {
+    width: 100%;
+  }
+
+  .input--input {
+    width: 50%;
+  }
+
   .weather-todolist {
-    margin: 0 4rem;
+    width: 100%;
+    margin: 0 0;
+  }
+  .newsfeed {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .weather-todolist {
+    margin: 0 3.5rem;
     display: flex;
     flex-direction: column;
   }
@@ -237,7 +259,7 @@ a {
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1400px) {
   .newsfeed {
     grid-template-columns: repeat(4, 23%);
   }
