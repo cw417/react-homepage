@@ -85,6 +85,25 @@ a {
 
 /* WEATHER */
 
+.weather-info {
+  justify-content: space-around;
+}
+
+.weather-city {
+  margin-bottom: 0.5rem;
+}
+
+.weather-description-icon-container {
+  align-items: center;
+}
+.weather-description {
+  padding-bottom: 1rem;
+}
+
+.temp-type-group {
+  justify-content: flex-end;
+}
+
 .temp-type-button {
   height: 2rem;
   width: 2rem;
@@ -206,6 +225,10 @@ a {
     margin-bottom: 2rem;
   }
 
+  .newsfeed {
+    grid-template-columns: repeat(2, 45%);
+  }
+
 }
 
 @media screen and (max-width: 900px) {
@@ -217,5 +240,11 @@ a {
 @media screen and (min-width: 1200px) {
   .newsfeed {
     grid-template-columns: repeat(4, 23%);
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .newsfeed {
+    grid-template-columns: repeat(5, 19%);
   }
 }

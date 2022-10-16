@@ -53,31 +53,33 @@ export default function Weather({ data, tempType, updateTempType, updateCity }) 
     <div className='weather'>
       <div className='container'>
         <div className='text-center container-title'>Weather</div>
-        <div>
           <Input
             updateFunction={updateCity}
             buttonText={<FiRepeat />}
             placeholder={"City"}
           />
-          <ButtonGroup updateTempType={updateTempType} />
-        </div>
-        <div>
-          <div>{formattedName}</div>
-          <div>{capitalize(data.weather[0].description)}</div>
-          <img src={icon} alt='Weather icon' />
-          <div style={{display: displayC}}
-          >
-            <div>Temp: {tempC}</div>
-            <div>Feel: {feelsLikeC}</div>
-            <div>Min: {tempMinC}</div>
-            <div>Max: {tempMaxC}</div>
+        <div className='flex-row weather-info'>
+          <div>
+            <div className='weather-city font-15'>{formattedName}</div>
+            <div className='flex-row weather-description-icon-container'>
+              <div className='weather-discription'>{capitalize(data.weather[0].description)}</div>
+              <img src={icon} alt='Weather icon' />
+            </div>
           </div>
-          <div style={{display: displayF}}
-          >
-            <div>Temp: {tempF}</div>
-            <div>Feel: {feelsLikeF}</div>
-            <div>Min: {tempMinF}</div>
-            <div>Max: {tempMaxF}</div>
+          <div>
+            <ButtonGroup updateTempType={updateTempType} />
+            <div style={{display: displayC}} >
+                <div>Temp: {tempC}</div>
+                <div>Feel: {feelsLikeC}</div>
+                <div>Min: {tempMinC}</div>
+                <div>Max: {tempMaxC}</div>
+            </div>
+            <div style={{display: displayF}} >
+              <div>Temp: {tempF}</div>
+              <div>Feel: {feelsLikeF}</div>
+              <div>Min: {tempMinF}</div>
+              <div>Max: {tempMaxF}</div>
+            </div>
           </div>
         </div>
       </div>
