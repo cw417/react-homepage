@@ -5,6 +5,7 @@
   --main-font-color: #fff;
   --background-color: #dfe6e9;
   --background-color-secondary:#2385C7;
+  --background-color-secondary-hover: #65b4fa;
 }
 
 body, html {
@@ -147,7 +148,7 @@ a {
 }
 
 .news-article:hover {
-  background-color: lightblue;
+  background-color: var(--background-color-secondary-hover);
 }
 
 .news-article-title {
@@ -216,6 +217,7 @@ a {
 }
 
 /* RESPONSIVE */
+
 @media screen and (max-width: 768px) {
 
   .app {
@@ -230,6 +232,11 @@ a {
     width: 100%;
     margin: 0 0;
   }
+
+  .weather {
+    margin-bottom: 2rem;
+  }
+
   .newsfeed {
     display: flex;
     flex-direction: column;
@@ -250,7 +257,6 @@ a {
   .newsfeed {
     grid-template-columns: repeat(2, 45%);
   }
-
 }
 
 @media screen and (max-width: 900px) {
