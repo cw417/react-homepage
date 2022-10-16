@@ -6,6 +6,7 @@ Browser homepage using React
 
 React Homepage is a basic homepage app for web browsers to replace the standard browser homepage.
 It displays a greeting, the current time, the current weather in the specified city, a todo list, and a searchable news feed.
+Weather temperatures can toggle between C and F with a group of toggle buttons.
 Written while learning React to practice API calls.
 
 ## Requirements
@@ -14,7 +15,7 @@ Written while learning React to practice API calls.
 - OpenWeatherMap API account & key (free)
 - NewsAPI API account & key (free)
 
-## Usage
+## Setup
 
 1. Clone repository:
 `git clone https://github.com/cw417/react-homepage.git`
@@ -28,6 +29,14 @@ Written while learning React to practice API calls.
 6. Start the app:
 `npm start`
 7. The page can be accessed at `localhost:3000` on your web browser (or possibly a different port, if specified by Node)
+
+## Usage
+
+- When first opening the page, the user will be prompted to enter their name to set the greeting.
+- The weather component can change cities with the "City" input.
+- The todo list component can add todos with the "Todo" input, or remove them with the `-` button.
+- The news feed displays the current top 20 most popular articles from the United States by default.
+  - The news feed can be filtered to top 20 articles matching a given keyword with the "Search news" input.
 
 ## Examples
 
