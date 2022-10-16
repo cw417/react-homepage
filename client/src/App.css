@@ -105,7 +105,6 @@ a {
 .newsfeed {
   margin-left: var(--outer-margin);
   margin-right: var(--outer-margin);
-  margin-top: 2rem;
   margin-bottom: var(--outer-margin);
   display: grid;
   grid-template-columns: 30% 30% 30%;
@@ -176,6 +175,10 @@ a {
 
 .text-center {
   text-align: center;
+}
+
+.mt-2 {
+  margin-top: 2rem;
 }
 
 /* RESPONSIVE */

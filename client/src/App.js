@@ -23,6 +23,7 @@ function App() {
   const [ userInfo, setUserInfo ] = useState({ name: '', city: 'Toronto', tempType: 'C' });
   const [ weatherData, setWeatherData ] = useState(initialStateWeather());
   const [ todos, setTodos ] = useState([]);
+  const [ newsApiUrl, setNewsApiUrl ] = useState(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`);
   const [ newsData, setNewsData ] = useState(initialStateNews())
 
   // local storage setup for 'userInfo'
@@ -53,8 +54,8 @@ function App() {
   
   // get current weather
 
-  const weatherApiKey = process.env.REACT_APP_WEATHER_API_KEY;
-  const weatherApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${userInfo.city}&appid=${weatherApiKey}`
+  const WEATHER_API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
+  const weatherApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${userInfo.city}&appid=${WEATHER_API_KEY}`
 
   useEffect(() => {
     fetch(weatherApiUrl)
@@ -64,9 +65,7 @@ function App() {
 
   // get news
 
-  const newsApiKey = process.env.REACT_APP_NEWS_API_KEY;
-  const country = 'us'
-  const newsApiUrl = `https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${newsApiKey}`
+  const NEWS_API_KEY = process.env.REACT_APP_NEWS_API_KEY;
 
   useEffect(() => {
     fetch(newsApiUrl)
@@ -122,6 +121,13 @@ function App() {
     setTodos(prevTodos => prevTodos.filter(todo => todo.id !== id));
   }
 
+  // newsfeed functions
+
+  function searchNews(keyword) {
+    const newUrl = `https://newsapi.org/v2/everything?q=${keyword}&pageSize=20&sortBy=popularity&apiKey=${NEWS_API_KEY}`
+    setNewsApiUrl(newUrl);
+  }
+
   return (
     <div className='flex-col'>
       <Header name={userInfo.name} updateName={updateName} />
@@ -134,7 +140,7 @@ function App() {
          />
         <TodoList todos={todos} addTodo={addTodo} deleteTodo={deleteTodo} />
       </div>
-      <NewsFeed newsData={newsData}  />
+      <NewsFeed newsData={newsData} searchNews={searchNews} />
     </div>
   );
 }
