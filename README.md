@@ -1,4 +1,4 @@
-# react-homepage
+# React Homepage
 
 Browser homepage using React
 
@@ -28,3 +28,7 @@ Written while learning React to practice API calls.
 6. Start the app:
 `npm start`
 7. The page can be accessed at `localhost:3000` on your web browser (or possibly a different port, if specified by Node)
+
+## Examples
+
+![Homepage screenshot](images/ss.png)
