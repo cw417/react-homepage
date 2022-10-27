@@ -3,26 +3,9 @@
   --button-blue: #3498db;
   --button-blue-hover: #2385C7;
   --main-font-color: #fff;
-
-  /* GREY / LIGHT BLUE */
-  /* 
-  --background-color: #7B92AA; 
-  --background-color-secondary:#37667E;
-  */
-
-
-  /* GREY / LIGHT BLUE */
-    --background-color: #dfe6e9; 
-    --background-color-secondary:#2385C7;
-
-   /* WHITE / GREY */
-  /*
-    --background-color: #f8f8f2;
-    --background-color-secondary:#282a36;
-  */
-
+  --background-color: #dfe6e9; 
+  --background-color-secondary:#2385C7;
   --background-color-secondary-hover: #65b4fa;
-
   --border-color: #fff;
 }
 
@@ -175,6 +158,7 @@ a {
 
 .news-article-title {
   font-size: 1.25rem;
+  font-weight: bold;
 }
 
 /* MISC */

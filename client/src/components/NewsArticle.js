@@ -9,7 +9,7 @@ export default function NewsArticle({ article }) {
   <a href={article.url} target='blank'>
     <div className='news-article shadow'>
       <div className='news-article-title'>{formatTitle(article.title)}</div>
-        <div>{article.source.name}</div>
+        <div className='news-article-source'>{article.source.name}</div>
     </div>
   </a>
   )
