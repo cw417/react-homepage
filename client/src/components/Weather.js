@@ -13,15 +13,15 @@ export default function Weather({ data, tempType, updateTempType, updateCity }) 
   const formattedName = `${data.name}, ${data.sys.country}`;
   const icon = `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
 
-  const tempC = Math.round(convertTempKC(data.main.temp)) + '\u2103;';
-  const feelsLikeC = Math.round(convertTempKC(data.main.feels_like)) + '\u2103;';
-  const tempMinC = Math.round(convertTempKC(data.main.temp_min)) + '\u2103;';
-  const tempMaxC = Math.round(convertTempKC(data.main.temp_max)) + '\u2103;';
+  const tempC = Math.round(convertTempKC(data.main.temp)) + '\u2103';
+  const feelsLikeC = Math.round(convertTempKC(data.main.feels_like)) + '\u2103';
+  const tempMinC = Math.round(convertTempKC(data.main.temp_min)) + '\u2103';
+  const tempMaxC = Math.round(convertTempKC(data.main.temp_max)) + '\u2103';
 
-  const tempF = Math.round(convertTempKF(data.main.temp)) + '\u2109;';
-  const feelsLikeF = Math.round(convertTempKF(data.main.feels_like)) + '\u2109;';
-  const tempMinF = Math.round(convertTempKF(data.main.temp_min)) + '\u2109;';
-  const tempMaxF = Math.round(convertTempKF(data.main.temp_max)) + '\u2109;';
+  const tempF = Math.round(convertTempKF(data.main.temp)) + '\u2109';
+  const feelsLikeF = Math.round(convertTempKF(data.main.feels_like)) + '\u2109';
+  const tempMinF = Math.round(convertTempKF(data.main.temp_min)) + '\u2109';
+  const tempMaxF = Math.round(convertTempKF(data.main.temp_max)) + '\u2109';
 
   function capitalize(s) {
     /**
@@ -51,7 +51,7 @@ export default function Weather({ data, tempType, updateTempType, updateCity }) 
   
   return (
     <div className='weather'>
-      <div className='container'>
+      <div className='container shadow'>
         <div className='text-center container-title'>Weather</div>
           <Input
             updateFunction={updateCity}
@@ -61,13 +61,15 @@ export default function Weather({ data, tempType, updateTempType, updateCity }) 
         <div className='flex-row weather-info'>
           <div>
             <div className='weather-city font-15'>{formattedName}</div>
-            <div className='flex-row weather-description-icon-container'>
+            <div className='flex-row weather-description-container'>
               <div className='weather-discription'>{capitalize(data.weather[0].description)}</div>
               <img src={icon} alt='Weather icon' />
             </div>
           </div>
           <div>
-            <ButtonGroup updateTempType={updateTempType} />
+            <div className='button-group'>
+              <ButtonGroup updateTempType={updateTempType} />
+            </div>
             <div style={{display: displayC}} >
                 <div>Temp: {tempC}</div>
                 <div>Feel: {feelsLikeC}</div>
