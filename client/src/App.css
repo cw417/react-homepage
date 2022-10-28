@@ -24,7 +24,7 @@ a {
 
 .app {
   width: 75%;
-  margin: auto;
+  margin: 2rem auto;
 }
 
 .main {
@@ -147,7 +147,7 @@ a {
 
 .news-article {
   border-radius: 15px;
-  padding: 1rem;
+  padding: 2rem;
   background-color: var(--background-color-secondary);
   height: 85%; /* Keeps all boxes same height */
 }
@@ -159,6 +159,13 @@ a {
 .news-article-title {
   font-size: 1.25rem;
   font-weight: bold;
+}
+
+.news-article-image {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  margin-bottom: 1rem;
 }
 
 /* MISC */
